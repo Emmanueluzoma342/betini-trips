@@ -1,0 +1,2 @@
+# Force www (primary domain), Netlify handles https automatically
+https://betinitrips.com/*    https://www.betinitrips.com/:splat    301!
