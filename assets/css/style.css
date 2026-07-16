@@ -239,7 +239,7 @@ p{max-width:68ch}
   content:'';position:absolute;inset:0;
   background:linear-gradient(100deg,rgba(8,17,32,.94) 0%,rgba(8,17,32,.78) 40%,rgba(8,17,32,.34) 70%,rgba(8,17,32,.12) 100%);
 }
-.hero__in{position:relative;z-index:2;padding:140px 0 80px;width:100%}
+.hero__in{position:relative;z-index:2;padding-top:140px;padding-bottom:80px;width:100%}
 .hero__copy{max-width:660px;color:#fff}
 .hero h1{color:#fff;margin-bottom:1.5rem}
 .hero h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--blue-sky);letter-spacing:-.01em}
@@ -394,9 +394,13 @@ p{max-width:68ch}
 .dest:hover .dest__pin{opacity:1;transform:translateY(0)}
 .dest__pin svg{width:100%;height:100%;fill:var(--red);filter:drop-shadow(0 2px 6px rgba(0,0,0,.3))}
 .dest--ask{
-  background:var(--cloud);border:1px dashed rgba(15,27,45,.18);
+  background:var(--cloud);border:1px dashed rgba(15,27,45,.2);
   align-items:center;justify-content:center;text-align:center;flex-direction:column;gap:.75rem;
 }
+.dest--ask::before{display:none}
+.dest--ask b{color:var(--ink)}
+.dest--ask p{color:var(--slate)}
+.dest--ask .tlink{color:var(--blue)}
 .dest--ask b{font-family:var(--display);font-size:1.125rem}
 .dest--ask p{font-size:.875rem;color:var(--slate);max-width:24ch}
 
@@ -489,7 +493,7 @@ p{max-width:68ch}
 .cta p{color:rgba(255,255,255,.88);margin:0 auto 2.25rem;max-width:46ch}
 .cta__btns{display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap}
 .cta__num{margin-top:2rem;font-size:.875rem;color:rgba(255,255,255,.8)}
-.cta__num button{font-weight:600;color:#fff;text-decoration:underline;text-underline-offset:3px}
+.cta__num button{font-weight:600;color:#fff;text-decoration:underline;text-underline-offset:3px;padding:10px 6px;min-height:44px;display:inline-block}
 
 /* ==========================================================================
    FORM
@@ -558,7 +562,7 @@ p{max-width:68ch}
    ========================================================================== */
 .foot{background:var(--ink);color:rgba(255,255,255,.62);padding:88px 0 32px;font-size:.9375rem}
 .foot__top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:48px;padding-bottom:56px}
-.foot__brand img{height:46px;margin-bottom:1.25rem}
+.foot__brand img{height:38px;width:auto;max-width:210px;object-fit:contain;object-position:left;margin-bottom:1.25rem}
 .foot__brand > p{font-family:var(--display);font-style:italic;color:rgba(255,255,255,.5);font-size:.9375rem;margin-bottom:2rem}
 .foot__demi{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid rgba(255,255,255,.12);border-radius:12px;transition:border-color .25s,background .25s;max-width:290px}
 .foot__demi:hover{border-color:var(--wa);background:rgba(37,211,102,.07)}
@@ -662,11 +666,12 @@ p{max-width:68ch}
   .nav__wa-mobile{display:flex}
   .nav__in{height:70px}
   .nav__logo img{height:36px}
-  .route__steps{grid-template-columns:1fr;gap:36px}
+  .route__steps{grid-template-columns:1fr;gap:32px}
   .route__line{display:none}
-  .route__step{display:grid;grid-template-columns:46px 1fr;gap:20px;text-align:left;align-items:start}
-  .route__dot{margin:0}
-  .route__step p{margin:0;max-width:none}
+  .route__step{display:grid;grid-template-columns:52px 1fr;grid-template-rows:auto auto;column-gap:18px;row-gap:6px;text-align:left;align-items:center;padding:0}
+  .route__dot{margin:0;grid-row:1/3;align-self:start}
+  .route__step h4{grid-column:2;margin:0;align-self:center}
+  .route__step p{grid-column:2;margin:0;max-width:none;text-align:left}
   .dests{grid-template-columns:repeat(2,1fr);grid-auto-rows:220px}
   .dest--big{grid-row:span 1}
   .dest--wide{grid-column:span 2}
@@ -677,7 +682,7 @@ p{max-width:68ch}
 }
 
 @media(max-width:680px){
-  :root{--pad:68px;--gutter:20px}
+  :root{--pad:68px;--gutter:22px}
   body{font-size:17px}
   .pillars{grid-template-columns:1fr;gap:36px}
   .pillar{padding:0;border-left:0;padding-bottom:36px;border-bottom:1px solid var(--line)}
@@ -747,9 +752,9 @@ p{max-width:68ch}
 .verify .btn{align-self:flex-start;margin-top:auto}
 
 /* Swellbridge credit */
-.foot__built{margin-top:8px;font-size:.75rem;color:rgba(255,255,255,.4)}
-.foot__built a{color:rgba(255,255,255,.65);font-weight:500;border-bottom:1px solid rgba(255,255,255,.2);transition:color .2s,border-color .2s}
-.foot__built a:hover{color:#fff;border-color:var(--red)}
+.foot__built{margin-top:10px;font-size:.6875rem;letter-spacing:.01em;color:rgba(255,255,255,.28)}
+.foot__built a{color:rgba(255,255,255,.42);font-weight:400;transition:color .2s}
+.foot__built a:hover{color:rgba(255,255,255,.75)}
 
 /* Serif emotional accents — used sparingly for brand voice */
 .serif-lead{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--blue);font-size:clamp(1.375rem,2.2vw,1.875rem);line-height:1.4;letter-spacing:-.01em}
